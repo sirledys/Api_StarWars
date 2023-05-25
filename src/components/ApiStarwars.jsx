@@ -20,11 +20,27 @@ const TraerPersonajes = async (page) => {
       console.log(error);
     }
   };
+  const siguiente = () => {
+    setPaginacion(paginacion + 1);
+    TraerPersonajes(paginacion + 1);
+  };
+
+  const atras = () => {
+    if (paginacion > 1) {
+      setPaginacion(paginacion - 1);
+      TraerPersonajes(paginacion - 1);
+    }
+  };
+
+  const extractIdFromUrl = (url) => {
+    const urlParts = url.split('/');
+    return urlParts[urlParts.length - 2];
+  };
   return (
     <div>
         <h1>Petición al Api de Star Wars</h1>
-      <button >Atrás</button>
-      <button >Siguiente</button>
+      <button onClick={atras}>Atrás</button>
+      <button onClick={siguiente}>Siguiente</button>
 
       {
         personajes.map(({name, eye_color, gender, mass, image}) => (
