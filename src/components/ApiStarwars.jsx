@@ -1,11 +1,45 @@
 import React from 'react'
 
 const ApiStarwars = () => {
+
+const [personajes, setPersonajes] = React.useState([]);
+const [paginacion, setPaginacion] = React.useState(0);
+
+const TraerPersonajes = async (page) => {
+    try {
+      const res = await fetch(`https://swapi.dev/api/people/?page=${page}`);
+      const { results } = await res.json();
+      const personajesConImagen = results.map((personaje) => ({
+        ...personaje,
+        image: `https://starwars-visualguide.com/assets/img/characters/${extractIdFromUrl(personaje.url)}.jpg`,
+      }));
+
+      setPersonajes(personajesConImagen);
+      console.log(personajesConImagen);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div>
         <h1>Petición al Api de Star Wars</h1>
       <button >Atrás</button>
       <button >Siguiente</button>
+
+      {
+        personajes.map(({name, eye_color, gender, mass, image}) => (
+
+          <div key= {name}>
+              <h3>Nombre: {name}</h3>
+              <h4>Color de ojos: {eye_color}</h4>
+              <h4>Género: {gender}</h4>
+              <h4>Peso en Kg: {mass}</h4>
+             <img src={image} alt={name} />
+            </div>
+        )
+        )
+      }
+
     </div>
   )
 }
