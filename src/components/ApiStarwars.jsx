@@ -38,7 +38,7 @@ const TraerPersonajes = async (page) => {
   };
   return (
       <div>
-          <img src='https://i.pinimg.com/originals/b6/af/5a/b6af5aeff0ee43a4253fc70c167bb6db.png'  width= '200px' height= '200px' ></img>
+          <img src='https://i.pinimg.com/originals/b6/af/5a/b6af5aeff0ee43a4253fc70c167bb6db.png' alt='Imagen starwars' width= '200px' height= '200px' ></img>
          <h1>Petición al Api de Star Wars</h1>
         
          <button onClick={atras}>Atrás</button>
