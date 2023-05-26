@@ -25,6 +25,17 @@ button {
     font-size: 14px;
 }
 
+.img1 {
+    margin-left: 700px;
+    margin-right: 800px;
+    margin-top: -150px;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 160px;
+    height: 160px;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
