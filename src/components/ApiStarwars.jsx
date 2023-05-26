@@ -38,12 +38,13 @@ const TraerPersonajes = async (page) => {
   };
   return (
       <div>
-        <h1>Petición al Api de Star Wars</h1>
-        <img src='https://i.pinimg.com/originals/b6/af/5a/b6af5aeff0ee43a4253fc70c167bb6db.png' class='img1'></img>
-        <button onClick={atras}>Atrás</button>
-        <button onClick={siguiente}>Siguiente</button>
+          <img src='https://i.pinimg.com/originals/b6/af/5a/b6af5aeff0ee43a4253fc70c167bb6db.png'  width= '200px' height= '200px' ></img>
+         <h1>Petición al Api de Star Wars</h1>
+        
+         <button onClick={atras}>Atrás</button>
+         <button onClick={siguiente}>Siguiente</button>
 
-        {
+         {
           personajes.map(({name, eye_color, gender, mass, image}) => (
 
             <div key= {name}>
@@ -55,7 +56,7 @@ const TraerPersonajes = async (page) => {
               </div>
           )
           )
-        }
+         }
 
       </div>
   );
